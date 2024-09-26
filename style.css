@@ -1,38 +1,61 @@
-*{
+* {
     margin: 0;
-    
-
-    
+    padding: 0;
+    box-sizing: border-box;
 }
+
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #fffcfc;
-    color: #333;
-    scroll-behavior: smooth;
-    
-  }
-header{
-    width: 100%;
-    background-color: white;
-    z-index: 1;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header,
+footer {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    color: white;
+    padding: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Shadow at the bottom */
+    z-index: 1000; /* Ensure the header is above other content */
 }
 
 .header-container{
-    display: flex;
-    background-color:aliceblue;
-    text-align: center;
-    justify-content: space-between;
-    padding: 7px;
-    padding-left: 20px;
-    padding-right: 20px;
-    align-items: center;
-    z-index: 0;
-    
+display: flex;
+text-align: center;
+justify-content: space-between;
+align-items: center;
+z-index: 0;
+
 }
 
+.carousel-section{
+    margin-top: 60px;
+}
 
-
-
+main {
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    padding: 10px;
+    gap: 10px;
+    
+}
 
 .carousel-inner {
     position: relative;
@@ -183,38 +206,54 @@ header{
     color: #00c21d;
 }
 
-#title {
+.statements:first-child{
+    background-color: rgb(255, 255, 255);
+    text-align: left;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 5px;
     width: 100%;
-    position: absolute;
-    padding: 0px;
-    margin: 0px auto;
-    text-align: center;
-    font-size: 27px;
-    color: rgba(255, 255, 255, 1);
-    font-family: 'Open Sans', sans-serif;
-    z-index: 9999;
-    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.33), -1px 0px 2px rgba(255, 255, 255, 0);
+    box-shadow: 0 0 7px rgb(222, 221, 221);
+}
+
+
+.mission, .vision, .values {
+    background-color: rgb(255, 255, 255);
+    text-align: left;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 5px;
+    width: 100%;
+    box-shadow: 0 0 7px rgb(222, 221, 221);
+    position: relative;
+    box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.3);
+    color: #fff;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    z-index: 1;
 }
 
 #about-section {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: left;
     overflow: hidden;
-    border-color: #00c21d;
-    border-width: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    
+
+
+
 }
 
-.container {
-    display: flex;
-    align-items: center;
+.about-container {
+    display: flex;    align-items: center;
     justify-content: space-around;
     width: 100%;
     background: #ffffff;
-    padding: 10px;
 }
+
 
 .about-image img {
     width: 400px;
@@ -246,225 +285,6 @@ header{
     animation: fadeInText 3s ease-out forwards;
 }
 
-#learn-more-btn {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    opacity: 0;
-    animation: fadeInButton 3.5s ease-out forwards;
-    transition: background-color 0.3s ease;
-}
-
-#learn-more-btn:hover {
-    background-color: #45a049;
-}
-
-.statement-container{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin: 50px auto;
-    max-width: 1200px;
-    
-}
-.section {
-    position: relative;
-    border-radius: 20px;
-    box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.3);
-    width: 27%;
-    margin: 15px;
-    padding: 20px;
-    color: #fff;
-    text-align: left;
-    overflow: hidden;
-    background-size: cover;
-    background-position: center;
-    height: 200px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    z-index: 1;
-}
-.section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.4); /* Dark overlay for text visibility */
-    z-index: -1;
-}
-
-/* Our Mission Section */
-.mission {
-    background-image: url('/assets/mission.jpeg');
-}
-
-/* Our Vision Section */
-.vision {
-    background-image: url('/assets/vision.jpg');
-}
-
-/* Our Values Section */
-.values {
-    background-image: url('/assets/values.jpg');
-}
-
-.section h2 {
-    font-size: 24px;
-    margin-bottom: 15px;
-    z-index: 2;
-}
-
-.section p {
-    font-size: 16px;
-    margin-bottom: 20px;
-    z-index: 2;
-}
-
-/* Transparent Color Overlay - Separate for Each Section */
-.mission::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 255, 0.4); /* Blue overlay for Mission with 40% transparency */
-    z-index: -1; /* Behind the content, but above the image */
-}
-
-.vision::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 255, 0, 0.4); /* Green overlay for Vision with 40% transparency */
-    z-index: -1;
-}
-
-.values::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(255, 0, 0, 0.4); /* Red overlay for Values with 40% transparency */
-    z-index: -1;
-}
-
-/* Media Queries for Responsiveness */
-@media (min-width: 481px) and (max-width: 768px){
-    .carousel-item h1{
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: white;
-        font-family: Arial Black, Helvetica, sans-serif;
-        font-size: 1.8rem;
-        text-align: center;
-    
-    }
-    .section {
-        width: 23%;
-   
-        
-    }
-
-    .carousel-item h1{
-        font-size: 30px;    
-    }
-    .container {
-        flex-direction: column;
-        text-align: center;
-        height: auto;
-    }
-
-    .about-image img {
-        width: 300px;
-        margin-bottom: 20px;
-    }
-
-    .about-text {
-        max-width: 90%;
-    }
-
-    #about-title {
-        font-size: 2rem;
-    }
-
-    #about-description {
-        font-size: 1.1rem;
-    }
-    #statements-section {
-        grid-template-columns: 1fr;
-    }
-
-    .statement {
-        padding: 30px;
-    }
-
-    .statement h2 {
-        font-size: 1.8rem;
-    }
-
-    .statement p {
-        font-size: 1.1rem;
-    }
-    .statement:hover {
-        height: 100px;
-    }
-}
-
-@media (max-width: 480px) {
-    .container {
-        flex-direction: column;
-        text-align: center;
-        height: auto;
-    }
-    h2 {
-        font-size: 24px; /* or 1.5rem */
-    }
-
-    p {
-        font-size: 14px; /* or 0.875rem */
-    }
-    .carousel-item h1{
-        font-size: 12px;    
-    }
-    .about-image img {
-        width: 250px;
-        margin-bottom: 20px;
-    }
-
-    #about-title {
-        font-size: 1.8rem;
-    }
-
-    #about-description {
-        font-size: 1rem;
-    }
-
-    #learn-more-btn {
-        padding: 8px 16px;
-    }
-    .section {
-        width: 100%;
-   
-        
-    }
-}
-
-
-
 /* Keyframes for animations */
 @keyframes fadeIn {
     to {
@@ -493,13 +313,114 @@ header{
 }
 
 
+/* Destop Layout */
 
 
 
-@media screen and (max-width: 468px) {
-    /* set column1 and column2 to 50% width each */
-        
-    
-    /* set column3 to 100% width */
-        
+    .col-1 {
+        flex: 0 0 100%;
     }
+
+    .mission,
+    .vision,
+    .values {
+        flex: 1 0 calc(33.33% - 20px)
+    }
+/* Our Mission Section */
+.mission {
+    background-image: url('/assets/mission.jpeg');
+}
+
+/* Our Vision Section */
+.vision {
+    background-image: url('/assets/vision.jpg');
+}
+
+/* Our Values Section */
+.values {
+    background-image: url('/assets/values.jpg');
+}
+
+/* Transparent Color Overlay - Separate for Each Section */
+.mission::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(160, 117, 0, 0.6); /* Blue overlay for Mission with 40% transparency */
+    z-index: -1; /* Behind the content, but above the image */
+}
+
+.vision::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 255, 0, 0.6); /* Green overlay for Vision with 40% transparency */
+    z-index: -1;
+}
+
+.values::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 221, 203, 0.6); /* Red overlay for Values with 40% transparency */
+    z-index: -1;
+}
+
+
+/* Mobile Layout */
+@media (max-width: 768px) {
+
+    .carousel-item h1{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-family: Arial Black, Helvetica, sans-serif;
+        font-size: 1.8rem;
+        text-align: center;
+    
+    }
+    .statements {
+        flex: 0 0 100%;
+        text-align: center;
+    }
+
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+        height: auto;
+    }
+
+    .about-image img {
+        width: 300px;
+        margin-bottom: 20px;
+    }
+
+    .about-text {
+        max-width: 90%;
+    }
+
+    #about-title {
+        font-size: 2rem;
+    }
+
+    #about-description {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-item h1{
+        font-size: 12px;    
+    }
+}
